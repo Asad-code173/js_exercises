@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Form Validation</h1>
+    <label for="">Enter Name</label><br>
+    <input type="text" placeholder="Enter your name" id="name"><br><br>
+    <span id="ename" style="color: red;"></span>
+    <label for="">Enter Email</label><br>
+    <input type="email" placeholder="email" id="email"><br><br>
+    <span id="eemail" style="color: red;"></span>
+    <label for="">Enter phone number</label><br>
+    <input type="tel" placeholder="phone" id="phone"><br><br>
+    <span id="ephone" style="color: red;"></span>
+    <label for="">Password</label><br>
+    <input type="text" placeholder="********" id="pass"><br><br>
+    <span id="epass" style="color: red;"></span>
+   <input type="submit" name="" id="btn">
+</body>
+<script>
+let btn = document.getElementById('btn').addEventListener('click',()=>{
+
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    let phone = document.getElementById('phone');
+    let pass = document.getElementById('pass');
+    let password = /^(?=*[0-9])(?=.*[!@#$%^&/\|*~])[A-za-z0-9]{8,100}$/;
+    let eml = /^([a-zA-z0-9_])@()\.(a-zA-z)/;
+    if (name.value == "") {
+        ename.innerHTML = "username is required"
+    }
+    else if(email.value == ""){
+        ename.innerHTML = "";
+        eemail.innerHTML = "email is required";
+    }
+    else if(phone.value == ""){
+        ename.innerHTML = "";
+        eemail.innerHTML = "";
+        ephone.innerHTML = "Phone is required";
+    }
+    else if(pass.value == ""){
+        ename.innerHTML = "";
+        eemail.innerHTML = "";
+        ephone.innerHTML = "";
+        epass.innerHTML = "Password is required";
+    }
+    else{
+        ename.innerHTML = "";
+        eemail.innerHTML = "";
+        ephone.innerHTML = "";
+        epass.innerHTML = "";
+        alert("data inserted");
+    }
+   
+    
+})
+    // name.addEventListener('',()=>{
+    //     // limit username with chracters and numbers
+    //     let regex = /[0-9a-zA-Z]{10}/; // its length will be 10 characters long
+    // })
+
+</script>
+</html>
